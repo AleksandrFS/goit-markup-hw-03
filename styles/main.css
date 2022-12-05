@@ -4,6 +4,7 @@
     --acent-color: #4D5AE5;
     --btn-order-hover-color:#3242f1;
     --btn-order-act-color:#404BBF;
+    --btn-filter-hover-color: #fff;
     --bgd-footer-hero:#2E2F42;
     --secondary-color:#F4F4FD;
     --text-footer:#E7E9FC;
@@ -17,10 +18,6 @@ body {
     background-color: var(--primary-bgd-color);
     color: var(--primary-text-color);
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    font-size: 16px;
-    line-height: 1.5;
 }
 
 h1,
@@ -39,6 +36,8 @@ ul {
 
 img {
     display: block;
+    min-width: 100%;
+    height: auto;
 }
 .container {
     width: 1158px;
@@ -63,7 +62,7 @@ img {
 }
 
 .section-title {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
@@ -73,12 +72,20 @@ img {
 
 /* Header */
 
+.header {
+border: 1px solid var(--secondary-color);
+border-top: 0;
+border-left: 0;
+border-right: 0;
+box-shadow: 0px 1px 0px rgba(46, 47, 66, 0.08);
+}
+
 .header .container {
     display: flex;
     align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
 }
+
+/* Site links */
 
 .nav{
     display: flex;
@@ -90,73 +97,59 @@ img {
 }
 
 .site-nav .item {
+    display: block;
     margin-right: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;  
 }
 
 .site-nav .item:last-child {
     margin-right: 0;
 }
 
-.auth-nav  {
-    display: flex;
-    margin-left: auto;
-}
-
-.auth-nav .item {
-    margin-right: 40px;
-}
-
-.auth-nav .item:last-child {
-    margin-right: 0;
-}
-
-/* Logo design header and footer */
-
-.webstudio {
-    margin-right: 77px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 1.33;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+.link-site {
+    display: block;
+    color: var(--tile-text-color);
     text-decoration: none;
-    color: var(--tile-text-color)
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    font-weight: 500;
 }
 
-.web {
+.link-site:hover,
+.link-site:focus {
     color: var(--acent-color);
 }
 
-.web-footer {
-color: var(--secondary-color);
-}
-
-.list {
-    list-style: none;
-}
-
-/* Site links */
-.link-site {
-    color:var(--tile-text-color);
-    text-decoration: none;
-    font-weight: 500;
-}   
-
-.link-site:hover, 
-.link-site:focus {
-    color: var(--primary-text-color);
-}
 .link-site:active {
     color: var(--acent-color);
 }
    
 /* Auth links */
 
+.auth-nav {
+    display: flex;
+    margin-left: auto;
+}
+
+.auth-nav .item {
+    margin-right: 40px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.auth-nav .item:last-child {
+    margin-right: 0;
+}
+
 .link-auth {
+    display: block;
     color: var(--primary-text-color);
     text-decoration: none;
-    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 
 .link-auth:hover, 
@@ -164,9 +157,39 @@ color: var(--secondary-color);
     color: var(--acent-color);
 }
 
+/* Logo design header and footer */
+
+.webstudio {
+    display: block;
+    margin-right: 77px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--acent-color)
+}
+
+.studio {
+    color: var(--primary-text-color);
+}
+
+.studio-footer {
+    color: var(--secondary-color);
+}
+
+.list {
+    list-style: none;
+}
+
 /* Sections */
 
 /* Hero */
+
 .hero {
     padding-top: 192px;
     padding-bottom: 192px;
@@ -190,10 +213,9 @@ color: var(--secondary-color);
 /* button "Order" in Webstudio */
 
 .btn-order {
-    background-color: var(--acent-color);;
+    background-color: var(--acent-color);
     color: var(--text-color-btn-order);
     font-family: inherit;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -219,31 +241,37 @@ color: var(--secondary-color);
 .btn-filter {
     background-color: var(--secondary-color);
     color: var(--acent-color);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px 24px;
+}
+
+.btn-name {
+
     font-family: inherit;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    cursor: pointer;
-    padding: 8px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-}
-
-.btn-name {
-    padding: 8px 16px;
 }
 
 .btn-filter:hover, .btn-filter:focus {
     background: var(--acent-color);
-    color: #FFF;
+    color: var(--btn-filter-hover-color);
     border: 1px solid var(--acent-color);
 }
 
 /* Other sections */
 
 /* Features */
+
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
 
 .section >.our-team {
     padding-top: 0;
@@ -304,8 +332,10 @@ color: var(--secondary-color);
 }
 
 .team-list .item {
+    background-color: var(--primary-bgd-color);
     margin-right: 24px;
-    padding-bottom: 32px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
 }
 
 .team-list .item:last-child {
@@ -317,7 +347,7 @@ color: var(--secondary-color);
     padding: 32px 16px;
 }
 
-.team-descr p {
+.team-descr .text {
 margin-top: 8px;
 }
 
@@ -355,14 +385,14 @@ margin-top: 8px;
     border-top: 0;
 }
 
-.portfolio-card_descr p {
+.portfolio-card_descr .text {
 margin-top: 8px;
 }
 
 .projects-list .item {
     flex-basis: calc((100% - 2 * 24px) / 3);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-
 
 /* ALT */
 /* .projects-list .item {
@@ -378,28 +408,35 @@ margin-top: 8px;
     margin-bottom: 0;
 } */
 
-
 /* Footer */
+
 .footer {
     background-color: var(--bgd-footer-hero);
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-.footer .container {
-        padding-top: 100px;
-        padding-bottom: 100px;
+.container-footer {
+    width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .footer-left {
     width: 264px;
-
 }
 
 .footer-left .webstudio {
     margin-right: 0;
-    /* margin-bottom: 16px; почему не работает? */ 
+    padding: 0;
 }
 
 .text-footer {
     margin-top: 16px;
     color: var(--text-footer);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
